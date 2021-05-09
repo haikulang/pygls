@@ -204,7 +204,7 @@ LSP_METHODS_MAP = {
         Optional[List[SelectionRange]],
     ),
     DOCUMENT_SEMANTIC_TOKENS: [
-        Callable[[list[str], ClientCapabilities], None],
+        Callable[[ClientCapabilities], None],
         SemanticTokensParams,
         Union[SemanticTokens, SemanticTokensPartialResult],
     ],
