@@ -230,10 +230,10 @@ class ServerCapabilitiesBuilder:
         return self
 
     def _with_semantic_tokens(self):
-        value = self._provider_options(DOCUMENT_SEMANTIC_TOKENS_FULL)
+        value = self._provider_options(DOCUMENT_SEMANTIC_TOKENS)
         if value is not None:
             self.server_cap.semantic_tokens_provider = value(
-                    [DOCUMENT_SEMANTIC_TOKENS, DOCUMENT_SEMANTIC_TOKENS_FULL],
+                    [DOCUMENT_SEMANTIC_TOKENS_FULL],
                     self.client_capabilities)
         return self
 
