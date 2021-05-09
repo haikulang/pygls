@@ -21,3 +21,4 @@ from pygls.lsp.types.language_features.rename import *
 from pygls.lsp.types.language_features.selection_range import *
 from pygls.lsp.types.language_features.signature_help import *
 from pygls.lsp.types.language_features.type_definition import *
+from pygls.lsp.types.language_features.semantic_tokens import *

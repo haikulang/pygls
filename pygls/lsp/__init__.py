@@ -37,6 +37,7 @@ __LSP_VERSION__ = "3.15"
 #           """Returns completion items."""
 
 # TODO: support partial-results types
+
 LSP_METHODS_MAP = {
     # General messages
     INITIALIZE: (None, InitializeParams, InitializeResult, ),
@@ -201,6 +202,16 @@ LSP_METHODS_MAP = {
         SelectionRangeOptions,
         SelectionRangeParams,
         Optional[List[SelectionRange]],
+    ),
+    DOCUMENT_SEMANTIC_TOKENS: (
+        None,
+        SemanticTokensParams,
+        Union[SemanticTokens, SemanticTokensPartialResult],
+    ),
+    DOCUMENT_SEMANTIC_TOKENS_FULL: (
+        None,
+        SemanticTokensParams,
+        Union[SemanticTokens, SemanticTokensPartialResult],
     ),
 }
 

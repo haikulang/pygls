@@ -66,7 +66,11 @@ from pygls.lsp.types.language_features import (CodeActionClientCapabilities, Cod
                                                SignatureHelpOptions,
                                                TypeDefinitionClientCapabilities,
                                                TypeDefinitionOptions,
-                                               TypeDefinitionRegistrationOptions)
+                                               TypeDefinitionRegistrationOptions,
+                                               SemanticTokensClientCapabilities,
+                                               SemanticTokensOptions,
+                                               SemanticTokensRegistrationOptions,
+                                               )
 from pygls.lsp.types.text_synchronization import TextDocumentSyncKind
 from pygls.lsp.types.workspace import (DidChangeConfigurationClientCapabilities,
                                        DidChangeWatchedFilesClientCapabilities,
@@ -115,6 +119,7 @@ class TextDocumentClientCapabilities(Model):
     publish_diagnostics: Optional[PublishDiagnosticsClientCapabilities] = None
     folding_range: Optional[FoldingRangeClientCapabilities] = None
     selection_range: Optional[SelectionRangeClientCapabilities] = None
+    semantic_tokens: Optional[SemanticTokensClientCapabilities] = None
 
 
 class WorkspaceClientCapabilities(Model):
@@ -210,6 +215,7 @@ class ServerCapabilities(Model):
     workspace_symbol_provider: Optional[bool] = None
     workspace: Optional[WorkspaceServerCapabilities] = None
     experimental: Optional[Any] = None
+    semantic_tokens_provider: Optional[Union[SemanticTokensOptions, SemanticTokensRegistrationOptions]] = None
 
 
 class InitializeResult(Model):
