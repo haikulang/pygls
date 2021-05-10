@@ -37,7 +37,6 @@ __LSP_VERSION__ = "3.15"
 #           """Returns completion items."""
 
 # TODO: support partial-results types
-
 LSP_METHODS_MAP = {
     # General messages
     INITIALIZE: (None, InitializeParams, InitializeResult, ),
