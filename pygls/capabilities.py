@@ -235,7 +235,7 @@ class ServerCapabilitiesBuilder:
                  or self._provider_options(DOCUMENT_SEMANTIC_TOKENS_FULL_DELTA)
                  or self._provider_options(DOCUMENT_SEMANTIC_TOKENS_RANGE))
         if value is not None:
-            self.server_cap.semantic_token_provider = value
+            self.server_cap.semantic_tokens_provider = value
         return self
 
     def _build(self):

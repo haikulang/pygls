@@ -57,7 +57,7 @@ class TestSemanticTokens(unittest.TestCase):
     def test_capabilities(self):
         capabilities = self.server.server_capabilities
 
-        assert capabilities.semantic_token_provider
+        assert capabilities.semantic_tokens_provider
 
     def test_tokens_list(self):
         response = self.client.lsp.send_request(
