@@ -215,7 +215,7 @@ class ServerCapabilities(Model):
     workspace_symbol_provider: Optional[bool] = None
     workspace: Optional[WorkspaceServerCapabilities] = None
     experimental: Optional[Any] = None
-    semantic_tokens_provider: Optional[Union[SemanticTokensOptions, SemanticTokensRegistrationOptions]] = None
+    semantic_token_provider: Optional[Union[SemanticTokensOptions, SemanticTokensRegistrationOptions]] = None
 
 
 class InitializeResult(Model):
