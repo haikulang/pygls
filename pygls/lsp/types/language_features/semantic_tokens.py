@@ -6,48 +6,6 @@ from pygls.lsp.types.basic_structures import (Model, NumType, PartialResultParam
                                               StaticRegistrationOptions, WorkDoneProgressOptions)
 
 
-class SemanticTokenTypes(str, enum.Enum):
-    """
-    Represents a generic type. Acts as a fallback for types which
-    can't be mapped to a specific type like class or enum.
-    """
-    Namespace = 'namespace'
-    Type = 'type'
-    Class = 'class'
-    Enum = 'enum'
-    Interface = 'interface'
-    Struct = 'struct'
-    TypeParameter = 'typeParameter'
-    Parameter = 'parameter'
-    Variable = 'variable'
-    Property = 'property'
-    EnumMember = 'enumMember'
-    Event = 'event'
-    Function = 'function'
-    Method = 'method'
-    Macro = 'macro'
-    Keyword = 'keyword'
-    Modifier = 'modifier'
-    Comment = 'comment'
-    String = 'string'
-    Number = 'number'
-    Regexp = 'regexp'
-    Operator = 'operator'
-
-
-class SemanticTokenModifiers(str, enum.Enum):
-    Declaration = 'declaration'
-    Definition = 'definition'
-    Readonly = 'readonly'
-    Static = 'static'
-    Deprecated = 'deprecated'
-    Abstract = 'abstract'
-    Async = 'async'
-    Modification = 'modification'
-    Documentation = 'documentation'
-    DefaultLibrary = 'defaultLibrary'
-
-
 class SemanticTokensLegend(Model):
     tokenTypes: list[str]
     tokenModifiers: list[str]

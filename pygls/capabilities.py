@@ -232,7 +232,7 @@ class ServerCapabilitiesBuilder:
     def _with_semantic_tokens(self):
         value = self._provider_options(DOCUMENT_SEMANTIC_TOKENS)
         if value is not None:
-            self.server_cap.semantic_tokens_provider = value(self.client_capabilities)
+            self.server_cap.semantic_tokens_provider = value
         return self
 
     def _build(self):
