@@ -22,7 +22,8 @@ from pygls.lsp.methods import (CODE_ACTION, CODE_LENS, COMPLETION, DECLARATION, 
                                TEXT_DOCUMENT_DID_OPEN, TEXT_DOCUMENT_DID_SAVE,
                                TEXT_DOCUMENT_WILL_SAVE, TEXT_DOCUMENT_WILL_SAVE_WAIT_UNTIL,
                                TYPE_DEFINITION, WORKSPACE_SYMBOL, DOCUMENT_SEMANTIC_TOKENS_FULL,
-                               DOCUMENT_SEMANTIC_TOKENS)
+                               DOCUMENT_SEMANTIC_TOKENS_FULL_DELTA, DOCUMENT_SEMANTIC_TOKENS_RANGE,
+                               WORKSPACE_SEMANTIC_TOKENS_REFRESH)
 from pygls.lsp.types import (CodeLensOptions, CompletionOptions, DocumentLinkOptions,
                              ExecuteCommandOptions, ImplementationOptions, SaveOptions,
                              ServerCapabilities, SignatureHelpOptions,
@@ -230,7 +231,9 @@ class ServerCapabilitiesBuilder:
         return self
 
     def _with_semantic_tokens(self):
-        value = self._provider_options(DOCUMENT_SEMANTIC_TOKENS)
+        value = (self._provider_options(DOCUMENT_SEMANTIC_TOKENS_FULL)
+                 or self._provider_options(DOCUMENT_SEMANTIC_TOKENS_FULL_DELTA)
+                 or self._provider_options(DOCUMENT_SEMANTIC_TOKENS_RANGE))
         if value is not None:
             self.server_cap.semantic_tokens_provider = value
         return self

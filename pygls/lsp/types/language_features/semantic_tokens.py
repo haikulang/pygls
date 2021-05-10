@@ -7,8 +7,8 @@ from pygls.lsp.types.basic_structures import (Model, NumType, PartialResultParam
 
 
 class SemanticTokensLegend(Model):
-    tokenTypes: list[str]
-    tokenModifiers: list[str]
+    token_types: list[str]
+    token_modifiers: list[str]
 
 
 class SemanticTokenRequestsFull(Model):
@@ -21,13 +21,13 @@ class SemanticTokenRequests(Model):
 
 
 class SemanticTokensClientCapabilities(Model):
-    dynamicRegistration: Optional[bool] = False
+    dynamic_registration: Optional[bool] = False
     requests: SemanticTokenRequests = None
     tokenTypes: list[str]
     tokenModifiers: list[str]
     formats: list[str]
-    overlappingTokenSupport: bool = False
-    multilineTokenSupport: bool = False
+    overlapping_token_support: bool = False
+    multiline_token_support: bool = False
 
 
 class SemanticTokensOptions(WorkDoneProgressOptions):
@@ -42,7 +42,7 @@ class SemanticTokensRegistrationOptions(TextDocumentRegistrationOptions, Semanti
 
 
 class SemanticTokensParams(WorkDoneProgressParams, PartialResultParams):
-    textDocument: TextDocumentIdentifier
+    text_document: TextDocumentIdentifier
 
 
 class SemanticTokens(Model):
@@ -55,18 +55,18 @@ class SemanticTokensPartialResult(Model):
 
 
 class SemanticTokensDeltaParams(WorkDoneProgressParams, PartialResultParams):
-    textDocument: TextDocumentIdentifier = None
-    previousResultId: str = None
+    text_document: TextDocumentIdentifier = None
+    previous_result_id: str = None
 
 
 class SemanticTokensEdit(Model):
     start: int = None
-    deleteCount: int = None
+    delete_count: int = None
     data: Optional[list[int]] = None
 
 
 class SemanticTokensDelta(Model):
-    resultId: Optional[str] = None
+    result_id: Optional[str] = None
     edits: list[SemanticTokensEdit]
 
 
@@ -75,9 +75,9 @@ class SemanticTokensDeltaPartialResult(Model):
 
 
 class SemanticTokensRangeParams(WorkDoneProgressParams, PartialResultParams):
-    textDocument: TextDocumentIdentifier = None
+    text_document: TextDocumentIdentifier = None
     range: Range = None
 
 
 class SemanticTokensWorkspaceClientCapabilities(Model):
-    refreshSupport: Optional[bool] = False
+    refresh_support: Optional[bool] = False
