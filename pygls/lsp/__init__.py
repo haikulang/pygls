@@ -203,17 +203,17 @@ LSP_METHODS_MAP = {
         Optional[List[SelectionRange]],
     ),
     DOCUMENT_SEMANTIC_TOKENS_FULL: (
-        None,
+        SemanticTokensOptions,
         SemanticTokensParams,
         Optional[Union[SemanticTokens, SemanticTokensPartialResult]],
     ),
     DOCUMENT_SEMANTIC_TOKENS_FULL_DELTA: (
-        None,
+        SemanticTokensOptions,
         SemanticTokensDeltaParams,
         Optional[Union[SemanticTokens, SemanticTokensDelta, SemanticTokensDeltaPartialResult]],
     ),
     DOCUMENT_SEMANTIC_TOKENS_RANGE: (
-        None,
+        SemanticTokensOptions,
         SemanticTokensRangeParams,
         Union[SemanticTokens, SemanticTokensPartialResult],
     ),
