@@ -215,7 +215,7 @@ LSP_METHODS_MAP = {
     DOCUMENT_SEMANTIC_TOKENS_RANGE: (
         SemanticTokensOptions,
         SemanticTokensRangeParams,
-        Union[SemanticTokens, SemanticTokensPartialResult],
+        Optional[Union[SemanticTokensDelta, SemanticTokensPartialResult]],
     ),
 }
 
