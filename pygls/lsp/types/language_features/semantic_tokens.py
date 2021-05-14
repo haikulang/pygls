@@ -1,6 +1,6 @@
 from typing import Optional, Union
 from pygls.lsp.types import (TextDocumentIdentifier)
-from pygls.lsp.types.basic_structures import (Model, NumType, PartialResultParams, Range,
+from pygls.lsp.types.basic_structures import (Model, PartialResultParams, Range,
                                               TextDocumentRegistrationOptions, WorkDoneProgressParams,
                                               StaticRegistrationOptions, WorkDoneProgressOptions)
 
